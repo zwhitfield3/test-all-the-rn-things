@@ -44,20 +44,20 @@ export function Button({
 
 const styles = StyleSheet.create({
   button: {
-    minHeight: 44,
-    paddingHorizontal: Spacing[4],
-    paddingVertical: Spacing[3],
-    borderRadius: 10,
+    minHeight: 56,
+    paddingHorizontal: Spacing[6],
+    paddingVertical: Spacing[4],
+    borderRadius: 14,
     alignItems: "center",
     justifyContent: "center",
   },
   primary: {
-    backgroundColor: Palette.brand,
+    backgroundColor: Palette.lilac,
   },
   secondary: {
     backgroundColor: "transparent",
     borderWidth: 1.5,
-    borderColor: Palette.brand,
+    borderColor: Palette.lilac,
   },
   pressed: {
     opacity: 0.85,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   label: {
-    fontSize: FontSize.base,
+    fontSize: FontSize.lg,
     fontFamily: FontWeight.semibold,
   },
 });
