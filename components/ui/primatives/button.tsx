@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Platform, Pressable, StyleSheet, Text } from "react-native";
 
 // shared theme constants
 import { FontSize, FontWeight, Palette, Spacing } from "@/constants/theme";
@@ -50,14 +50,28 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     alignItems: "center",
     justifyContent: "center",
+    ...Platform.select({
+      android: {
+        minHeight: 64,
+        paddingHorizontal: Spacing[8],
+        borderRadius: 32,
+      },
+      default: {},
+    }),
   },
   primary: {
-    backgroundColor: Palette.lilac,
+    backgroundColor: Platform.select({
+      android: Palette.mint,
+      default: Palette.lilac,
+    }),
   },
   secondary: {
     backgroundColor: "transparent",
     borderWidth: 1.5,
-    borderColor: Palette.lilac,
+    borderColor: Platform.select({
+      android: Palette.mint,
+      default: Palette.lilac,
+    }),
   },
   pressed: {
     opacity: 0.85,
